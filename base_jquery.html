@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+</head>
+
+<body>
+</body>
+
+<script>
+var doc = document
+
+$("<div/>")
+   .text("Enter text here (jQuery version):")
+   .appendTo(doc.body)
+
+$("<div/>")
+   .append($("<textarea/>"))
+   .appendTo($('body'))
+
+var div3 = $("<div/>")
+div3.append(
+      $('<button id="sendBut">Send</button>'))
+   .append(
+      $("<a/>").attr("href","#").text("Exit"))
+   .appendTo(doc.body)
+
+// div3 is a jQuery object (list of HTML elements) 
+// we can extract the HTML tags as if it was an array
+// https://learn.jquery.com/using-jquery-core/jquery-object/
+setTimeout(function() { // Delay a bit console.log to show the HTML element properly
+  console.log('JQuery object div3:', div3)
+  console.log('HTML element div3[0]:', div3[0])
+
+  var div = $("div")
+  console.log('JQuery object div:', div)
+  
+  console.log('jQuery button:', $("#sendBut"))
+  console.log('button as HTML element:', $("#sendBut")[0])
+  }, 20)
+</script>
+
+</html>

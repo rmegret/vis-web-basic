@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+
+<body>
+</body>
+
+<script>
+var body = d3.select('body')
+
+body.append('div')
+    .append('text')
+    .text("Enter text here (D3 version):")
+
+body.append('div')
+    .append('textarea')
+
+var div3 = body.append('div')
+
+div3.append('button')
+    .attr('id','sendBut')
+    .text('Send')
+div3.append("a")
+    .attr("href","#")
+    .text("Exit")
+
+// div3 is a D3 selection, we can extract the HTML tags with node()
+setTimeout(function() { // Delay a bit console.log to show the HTML element properly
+   console.log("D3 div3:",div3)
+   console.log("HTML Element div3.node():",div3.node())
+
+   var div = d3.select("div")
+   console.log('D3 select("div"):', div)
+   console.log('D3 select("div").node():', div.node())
+   var divAll = d3.selectAll("div")
+   console.log('D3 selectAll("div"):', divAll)
+   console.log('D3 selectAll("div").node():', divAll.node())
+   console.log('D3 selectAll("div").nodes():', divAll.nodes())
+
+   var but = d3.select("#sendBut")
+   console.log('D3 select("#sendBut"):', but)
+   console.log('D3 select("#sendBut").node():', but.node())
+}, 20)
+</script>  
+
+</html>
